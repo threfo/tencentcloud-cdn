@@ -1,0 +1,20 @@
+name: 'Tencentcloud cdn api action'
+description: 'Tencentcloud cdn action'
+author: 'Thomas'
+branding:
+  icon: 'git-branch'
+  color: 'green'
+inputs:
+  secret_id:
+    required: true
+    description: 'Tencent cloud SecretId'
+  secret_key:
+    required: true
+    description: 'Tencent cloud SecretKey'
+  urls:
+    required: true
+    description: 'urls split by ;, eg: http://a.com/a.txt;http://a.com/b.txt'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
