@@ -26,6 +26,8 @@ async function run(): Promise<void> {
       }
     }
 
+    console.log('urls', urls)
+
     const client = new Client(clientConfig)
     const params = {
       Urls: urls
