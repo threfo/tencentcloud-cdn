@@ -1,5 +1,8 @@
-import tencentcloud from 'tencentcloud-sdk-nodejs'
+import {cdn} from 'tencentcloud-sdk-nodejs'
 import * as core from '@actions/core'
+
+const {v20180606} = cdn || {}
+const {Client} = v20180606 || {}
 
 // https://cloud.tencent.com/document/product/436/45597
 
@@ -10,7 +13,6 @@ async function run(): Promise<void> {
 
     const urls: string[] = core.getInput('urls').split(';')
 
-    const CdnClient = tencentcloud.cdn.v20180606.Client
     const clientConfig = {
       credential: {
         secretId,
@@ -24,7 +26,7 @@ async function run(): Promise<void> {
       }
     }
 
-    const client = new CdnClient(clientConfig)
+    const client = new Client(clientConfig)
     const params = {
       Urls: urls
     }
