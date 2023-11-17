@@ -11,7 +11,10 @@ async function run(): Promise<void> {
     const secretId: string = core.getInput('secret_id')
     const secretKey: string = core.getInput('secret_key')
 
-    const urls: string[] = core.getInput('urls').split(';')
+    const urls: string[] = core
+      .getInput('urls')
+      .split(';')
+      .filter(i => i)
 
     const clientConfig = {
       credential: {
