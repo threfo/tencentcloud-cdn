@@ -27,7 +27,7 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "tencentcloud-sdk-nodejs": "^4.0.735"
+    "tencentcloud-sdk-nodejs": "^4.0.765"
   },
   "devDependencies": {
     "@types/node": "^16.10.5",
